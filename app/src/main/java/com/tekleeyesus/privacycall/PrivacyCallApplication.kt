@@ -5,18 +5,16 @@ import com.tekleeyesus.privacycall.util.NotificationHelper
 import timber.log.Timber
 
 class PrivacyCallApplication : Application() {
-    
+
     override fun onCreate() {
         super.onCreate()
-        
+
         // Initialize logging
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
-        
+        Timber.plant(Timber.DebugTree())
+
         // Initialize notification channels
         NotificationHelper.createNotificationChannels(this)
-        
+
         Timber.d("PrivacyCall Application started")
     }
 }
